@@ -1,0 +1,17 @@
+spring:
+  rabbitmq:
+    host: 172.17.201.64
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 2000
+        default-requeue-rejected: false
+    publisher-confirms: true
+#    template:
+#      retry:
+#        enabled: true
